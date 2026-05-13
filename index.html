@@ -60,14 +60,12 @@
                         inset 0 1px 0 rgba(255,255,255,0.6);
         }
 
-        /* Top-Down Midday Ocean Background (Strictly No Mountains) */
+        /* Top-Down Midday Ocean Background */
         .ocean-bg {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
             z-index: -4;
-            /* Aerial view of crystal clear water with a tiny island/trees */
-            background-image: url('ocean.jpg
-              '); 
+            background-image: url('https://wallpapercave.com/wp/wp13778547.jpg'); 
             background-size: cover;
             background-position: center;
             animation: gentleWavePan 90s ease-in-out infinite alternate;
@@ -77,36 +75,6 @@
         @keyframes gentleWavePan {
             0% { transform: scale(1.15) translate(0%, 0%); }
             100% { transform: scale(1.15) translate(-3%, 3%); }
-        }
-
-        /* Realistic Deep Water Animal Shadows */
-        .marine-layer {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -3;
-            pointer-events: none;
-        }
-
-        /* We use heavy blur and multiply blend mode to make them look like real deep-water shadows */
-        .marine-shadow {
-            position: absolute;
-            fill: #082f49; /* Deep ocean navy */
-            mix-blend-mode: multiply;
-            opacity: 0.25;
-            filter: blur(14px); 
-            transition: transform 0.1s linear;
-        }
-
-        #turtle-shadow {
-            width: 350px;
-            top: 20%;
-            left: -10%;
-        }
-
-        #manta-shadow {
-            width: 600px;
-            bottom: 5%;
-            right: -10%;
         }
 
         /* Clean scrollbar */
@@ -121,21 +89,6 @@
     <!-- Environmental Layers -->
     <div class="ocean-bg"></div>
     
-    <!-- Deep Water Shadows (Parallax via JS) -->
-    <div class="marine-layer overflow-hidden">
-        <!-- SVG Turtle Silhouette -->
-        <svg id="turtle-shadow" class="marine-shadow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50,20 C55,20 60,25 60,35 C70,30 80,35 85,45 C85,50 80,55 75,55 C78,65 75,75 70,80 C60,85 40,85 30,80 C25,75 22,65 25,55 C20,55 15,50 15,45 C20,35 30,30 40,35 C40,25 45,20 50,20 Z" />
-        </svg>
-        
-        <!-- SVG Manta Silhouette -->
-        <svg id="manta-shadow" class="marine-shadow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50,30 C60,40 85,45 95,50 C95,52 85,55 70,55 C65,65 60,80 50,90 C40,80 35,65 30,55 C15,55 5,52 5,50 C15,45 40,40 50,30 Z" />
-            <path d="M45,32 C45,25 40,20 35,20 C40,25 45,30 45,32 Z" />
-            <path d="M55,32 C55,25 60,20 65,20 C60,25 55,30 55,32 Z" />
-        </svg>
-    </div>
-
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 pt-6 px-6">
         <div class="max-w-5xl mx-auto">
@@ -190,29 +143,8 @@
                 </div>
             </section>
 
-            <!-- Philosophy / About Section -->
-            <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12">
-                <div class="md:col-span-4">
-                    <h2 class="text-sm font-extrabold tracking-widest text-ocean-900 uppercase mb-4 drop-shadow-sm">Philosophy</h2>
-                </div>
-                <div class="md:col-span-8 glass-panel rounded-3xl p-8 md:p-10 text-slate-800 font-medium space-y-6 text-lg">
-                    <p class="leading-relaxed">
-                        I’m a final year Computer Science engineering student who enjoys building modern web experiences that feel smooth, responsive, and visually thoughtful.
-                    </p>
-                    <p class="leading-relaxed">
-                        My interest in development started with curiosity around how applications actually work behind the scenes, which slowly turned into experimenting with frontend interfaces, backend systems, APIs, authentication flows, and real-time applications.
-                    </p>
-                    <p class="leading-relaxed">
-                        I enjoy blending clean design with practical functionality — creating projects that are not only usable, but also visually immersive and engaging. Recently, I’ve been exploring full-stack development, interactive UI experiences, and AI-related concepts while continuously improving my understanding of scalable application workflows.
-                    </p>
-                    <p class="font-bold text-slate-900 border-l-4 border-ocean-600 pl-5 mt-8 italic">
-                        "I enjoy creating software that balances aesthetics and functionality — products that not only work well, but also feel intuitive and immersive to use."
-                    </p>
-                </div>
-            </section>
-
             <!-- Expertise / Skills -->
-            <section id="skills" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12">
+            <section id="skills" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12 border-t border-white/40">
                 <div class="md:col-span-4">
                     <h2 class="text-sm font-bold tracking-widest text-ocean-800 uppercase mb-4">Technical Expertise</h2>
                 </div>
@@ -241,7 +173,7 @@
             </section>
 
             <!-- Craft / Projects -->
-            <section id="projects" class="py-12">
+            <section id="projects" class="py-12 border-t border-white/40">
                 <div class="mb-12">
                     <h2 class="text-sm font-extrabold tracking-widest text-ocean-900 uppercase drop-shadow-sm">Featured Craft</h2>
                 </div>
@@ -348,30 +280,33 @@
                 </div>
             </section>
 
+            <!-- Philosophy / About Section (Moved to Bottom) -->
+            <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12 border-t border-white/40">
+                <div class="md:col-span-4">
+                    <h2 class="text-sm font-extrabold tracking-widest text-ocean-900 uppercase mb-4 drop-shadow-sm">Philosophy</h2>
+                </div>
+                <div class="md:col-span-8 glass-panel rounded-3xl p-8 md:p-10 text-slate-800 font-medium space-y-6 text-lg">
+                    <p class="leading-relaxed">
+                        I’m a final year Computer Science engineering student who enjoys building modern web experiences that feel smooth, responsive, and visually thoughtful.
+                    </p>
+                    <p class="leading-relaxed">
+                        My interest in development started with curiosity around how applications actually work behind the scenes, which slowly turned into experimenting with frontend interfaces, backend systems, APIs, authentication flows, and real-time applications.
+                    </p>
+                    <p class="leading-relaxed">
+                        I enjoy blending clean design with practical functionality — creating projects that are not only usable, but also visually immersive and engaging. Recently, I’ve been exploring full-stack development, interactive UI experiences, and AI-related concepts while continuously improving my understanding of scalable application workflows.
+                    </p>
+                    <p class="font-bold text-slate-900 border-l-4 border-ocean-600 pl-5 mt-8 italic">
+                        "I enjoy creating software that balances aesthetics and functionality — products that not only work well, but also feel intuitive and immersive to use."
+                    </p>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-
-        // Deep Water Parallax for realistic animal shadows
-        const turtle = document.getElementById('turtle-shadow');
-        const manta = document.getElementById('manta-shadow');
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            
-            // Move slowly based on scroll to simulate massive size deep underwater
-            if(turtle) {
-                // Turtle swims diagonally down-right
-                turtle.style.transform = `translate(${scrollY * 0.15}px, ${scrollY * 0.08}px) rotate(15deg)`;
-            }
-            if(manta) {
-                // Manta swims diagonally up-left
-                manta.style.transform = `translate(${scrollY * -0.2}px, ${scrollY * -0.1}px) rotate(-30deg)`;
-            }
-        });
     </script>
 </body>
 </html>
