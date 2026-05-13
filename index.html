@@ -95,12 +95,11 @@
 
 /* premium hover effect */
 .glass-panel:hover {
-    transform: translateY(-8px) scale(1.015);
-
-    background: linear-gradient(
-        to bottom right,
-        rgba(255,255,255,0.18),
-        rgba(255,255,255,0.07)
+            background: rgba(255, 255, 255, 0.35); /* Increased transparency */
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 50px -15px rgba(8, 47, 73, 0.15), 
+                        inset 0 1px 0 rgba(255,255,255,0.6);
     );
 
     border: 1px solid rgba(255,255,255,0.18);
