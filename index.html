@@ -1,300 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koushik Reddy - Full Stack Developer</title>
-    <link rel="stylesheet" href="styles.css">
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Koushik Reddy | Premium Portfolio
+  </title>
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">KR</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+
+  <!-- PARTICLES -->
+
+  <div id="particles"></div>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      KOUSHIK REDDY
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#projects">Projects</a>
+
+      <a href="#education">Education</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-grid">
+
+      <div class="hero-left">
+
+        <div class="hero-tag">
+
+          <span></span>
+
+          Calm Engineering • Premium Frontend Craftsmanship
+
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-wrapper">
-                <img src="profile.jpg" alt="Koushik Reddy" class="profile-image">
-            </div>
-            <h1>Koushik Reddy</h1>
-            <p class="tagline">Full Stack Developer</p>
-            <p class="subtitle">Crafting elegant digital solutions with modern technologies</p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
+        <h1>
+          Koushik <span>Reddy</span>
+        </h1>
+
+        <p>
+
+          Final-year Computer Science engineering student passionate
+          about full-stack web development and scalable digital
+          experiences using ReactJS, Firebase, Node.js, and elegant UI systems.
+
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#projects" class="btn btn-primary">
+            Explore Projects
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            Contact Me
+          </a>
+
         </div>
-        <div class="scroll-indicator">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M12 5v14M5 12l7 7 7-7"/>
-            </svg>
+
+      </div>
+
+      <div class="hero-right">
+
+        <div class="image-wrapper">
+
+          <img
+            src="assets/profile.jpg"
+            alt="Koushik Reddy"
+          />
+
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About</h2>
-                <div class="underline"></div>
-            </div>
-            
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        I'm a final-year Computer Science student at GITAM University, Bengaluru, with a passion for building scalable web applications and exploring AI/ML concepts.
-                    </p>
-                    <p>
-                        With hands-on experience in React, Node.js, and Firebase, I focus on creating user-centric solutions that solve real-world problems. My work emphasizes clean code, responsive design, and performance optimization.
-                    </p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>4+</h3>
-                        <p>Projects</p>
-                    </div>
-                    <div class="stat">
-                        <h3>7.75</h3>
-                        <p>CGPA</p>
-                    </div>
-                    <div class="stat">
-                        <h3>2023</h3>
-                        <p>Started BTech</p>
-                    </div>
-                </div>
-            </div>
+        <div class="floating-card">
+
+          <h3>
+            Engineering Philosophy
+          </h3>
+
+          <p>
+
+            Building immersive interfaces with calm visual depth,
+            scalable architecture, and thoughtful UX systems.
+
+          </p>
+
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2>Skills</h2>
-                <div class="underline"></div>
-            </div>
+      </div>
 
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">SQL</span>
-                    </div>
-                </div>
+    </div>
 
-                <div class="skill-group">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">ReactJS</span>
-                        <span class="skill-item">HTML5 & CSS3</span>
-                        <span class="skill-item">Tailwind CSS</span>
-                        <span class="skill-item">Responsive Design</span>
-                    </div>
-                </div>
+  </section>
 
-                <div class="skill-group">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">REST APIs</span>
-                        <span class="skill-item">JDBC</span>
-                    </div>
-                </div>
+  <!-- ABOUT -->
 
-                <div class="skill-group">
-                    <h3>Tools & Databases</h3>
-                    <div class="skill-items">
-                        <span class="skill-item">Firebase</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">VS Code</span>
-                    </div>
-                </div>
-            </div>
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Technical Foundation
+        </h2>
+
+        <p>
+
+          Focused on scalable frontend systems,
+          immersive user experiences,
+          and modern backend workflows.
+
+        </p>
+
+      </div>
+
+      <div class="about-grid">
+
+        <div class="glass-card">
+
+          <h3>
+            Technical Skills
+          </h3>
+
+          <div class="skills">
+
+            <div class="skill">JavaScript</div>
+            <div class="skill">ReactJS</div>
+            <div class="skill">Node.js</div>
+            <div class="skill">Firebase</div>
+            <div class="skill">Tailwind CSS</div>
+            <div class="skill">Spring Boot</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">GitHub</div>
+
+          </div>
+
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <div class="underline"></div>
-            </div>
+        <div class="glass-card">
 
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>AI Road Extraction</h3>
-                        <span class="project-badge">Python • AI/ML</span>
-                    </div>
-                    <p class="project-description">
-                        AI-assisted road extraction concept focused on identifying road structures from imagery using image processing and segmentation techniques.
-                    </p>
-                    <div class="project-tech">
-                        <span>Image Processing</span>
-                        <span>ML Concepts</span>
-                        <span>Python</span>
-                    </div>
-                </article>
+          <h3>
+            Professional Summary
+          </h3>
 
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>MessengerX - Chat App</h3>
-                        <span class="project-badge">ReactJS • Firebase</span>
-                    </div>
-                    <p class="project-description">
-                        Real-time chat application with responsive UI, user authentication, and Firebase integration for seamless messaging experience.
-                    </p>
-                    <div class="project-tech">
-                        <span>ReactJS</span>
-                        <span>Firebase</span>
-                        <span>Real-time Chat</span>
-                    </div>
-                </article>
+          <p>
 
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>Emergency Alert System</h3>
-                        <span class="project-badge">Node.js • REST APIs</span>
-                    </div>
-                    <p class="project-description">
-                        Real-time emergency reporting platform with admin panel and structured reporting system for broadcasting alerts to users.
-                    </p>
-                    <div class="project-tech">
-                        <span>Node.js</span>
-                        <span>REST APIs</span>
-                        <span>Firebase</span>
-                    </div>
-                </article>
+            Passionate about creating responsive applications,
+            backend systems, authentication workflows,
+            and immersive UI experiences.
 
-                <article class="project-card">
-                    <div class="project-header">
-                        <h3>Virtual Try-On Website</h3>
-                        <span class="project-badge">ReactJS • Camera API</span>
-                    </div>
-                    <p class="project-description">
-                        Interactive virtual clothing try-on interface exploring camera integration and modern UI principles for immersive user experience.
-                    </p>
-                    <div class="project-tech">
-                        <span>ReactJS</span>
-                        <span>Camera APIs</span>
-                        <span>Interactive UI</span>
-                    </div>
-                </article>
-            </div>
+          </p>
+
         </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2>Education</h2>
-                <div class="underline"></div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Selected Projects
+        </h2>
+
+        <p>
+
+          Carefully crafted systems focused on usability,
+          immersive interaction, and scalable architecture.
+
+        </p>
+
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT -->
+
+        <div class="project-card">
+
+          <div class="project-number">
+            01
+          </div>
+
+          <h3>
+            MessengerX
+          </h3>
+
+          <p>
+
+            Real-time modern chat application featuring
+            responsive UI, authentication workflows,
+            and cloud-based messaging.
+
+          </p>
+
+          <div class="tech-stack">
+
+            <div class="tech">
+              ReactJS
             </div>
 
-            <div class="education-card">
-                <div class="edu-header">
-                    <h3>GITAM University, Bengaluru</h3>
-                    <span class="edu-period">2023 - 2027</span>
-                </div>
-                <p class="edu-degree">B.Tech in Computer Science Engineering</p>
-                <div class="edu-details">
-                    <div class="edu-item">
-                        <span>CGPA</span>
-                        <strong>7.75</strong>
-                    </div>
-                    <div class="edu-item">
-                        <span>Class 12</span>
-                        <strong>87%</strong>
-                    </div>
-                    <div class="edu-item">
-                        <span>Class 10</span>
-                        <strong>89%</strong>
-                    </div>
-                </div>
+            <div class="tech">
+              Firebase
             </div>
+
+            <div class="tech">
+              Tailwind CSS
+            </div>
+
+          </div>
+
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="underline"></div>
+        <!-- PROJECT -->
+
+        <div class="project-card">
+
+          <div class="project-number">
+            02
+          </div>
+
+          <h3>
+            Emergency Alert System
+          </h3>
+
+          <p>
+
+            Real-time emergency reporting platform with
+            backend APIs, notifications, and scalable architecture.
+
+          </p>
+
+          <div class="tech-stack">
+
+            <div class="tech">
+              Node.js
             </div>
 
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <p>I'm interested in new opportunities and collaborations.</p>
-                    
-                    <div class="contact-list">
-                        <a href="mailto:koushikreddyka00@gmail.com" class="contact-link">
-                            <span class="contact-icon">✉</span>
-                            <span>koushikreddyka00@gmail.com</span>
-                        </a>
-                        <a href="tel:+917022950884" class="contact-link">
-                            <span class="contact-icon">📱</span>
-                            <span>+91-7022950884</span>
-                        </a>
-                        <div class="contact-link">
-                            <span class="contact-icon">📍</span>
-                            <span>Bengaluru, India</span>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://github.com/koushikreddyka" target="_blank" class="social-link">GitHub</a>
-                        <a href="https://linkedin.com/in/koushik-reddy" target="_blank" class="social-link">LinkedIn</a>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+            <div class="tech">
+              Firebase
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Koushik Reddy. All rights reserved.</p>
-        </div>
-    </footer>
+            <div class="tech">
+              REST APIs
+            </div>
 
-    <script src="script.js"></script>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Education
+        </h2>
+
+      </div>
+
+      <div class="education-card">
+
+        <h3>
+          GITAM University, Bengaluru
+        </h3>
+
+        <p>
+
+          Bachelor of Technology in Computer Science Engineering
+
+          <br /><br />
+
+          CGPA: 7.75
+
+          <br />
+
+          2023 — 2027
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <div class="container">
+
+      <div class="footer-line"></div>
+
+      <h2>
+        Let’s Build Something Meaningful
+      </h2>
+
+      <p>
+        Bengaluru, India
+      </p>
+
+      <p>
+        +91-7022950884
+      </p>
+
+      <p>
+        koushikreddyka00@gmail.com
+      </p>
+
+    </div>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="script.js"></script>
+
 </body>
 </html>
