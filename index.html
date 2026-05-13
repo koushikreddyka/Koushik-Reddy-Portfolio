@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koushik Reddy - Full Stack Developer & AI/ML Enthusiast</title>
+    <title>Koushik Reddy - Full Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,53 +29,53 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="profile-image-container">
+            <div class="profile-wrapper">
                 <img src="profile.jpg" alt="Koushik Reddy" class="profile-image">
             </div>
-            <h1 class="hero-title">Koushik Reddy</h1>
-            <p class="hero-subtitle">Full Stack Developer | AI/ML Enthusiast | Tech Innovator</p>
-            <p class="hero-description">Crafting elegant solutions for complex problems</p>
-            <div class="hero-buttons">
+            <h1>Koushik Reddy</h1>
+            <p class="tagline">Full Stack Developer</p>
+            <p class="subtitle">Crafting elegant digital solutions with modern technologies</p>
+            <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/koushikreddyka" target="_blank" class="social-icon">GitHub</a>
-                <a href="https://linkedin.com/in/koushik-reddy" target="_blank" class="social-icon">LinkedIn</a>
-                <a href="mailto:koushikreddyka00@gmail.com" class="social-icon">Email</a>
-            </div>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll to explore</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
+            <div class="section-header">
+                <h2>About</h2>
+                <div class="underline"></div>
+            </div>
+            
+            <div class="about-grid">
                 <div class="about-text">
-                    <p>I'm a final-year Computer Science engineering student from GITAM University, Bengaluru, passionate about full-stack web development and building practical software products.</p>
-                    <p>With hands-on experience in modern web technologies like ReactJS, Firebase, and Node.js, I combine technical expertise with creative problem-solving to deliver scalable applications.</p>
-                    <p>My journey in tech has taught me the importance of continuous learning, clean code practices, and user-centric design.</p>
+                    <p>
+                        I'm a final-year Computer Science student at GITAM University, Bengaluru, with a passion for building scalable web applications and exploring AI/ML concepts.
+                    </p>
+                    <p>
+                        With hands-on experience in React, Node.js, and Firebase, I focus on creating user-centric solutions that solve real-world problems. My work emphasizes clean code, responsive design, and performance optimization.
+                    </p>
                 </div>
-                <div class="stats">
-                    <div class="stat-item">
+                <div class="about-stats">
+                    <div class="stat">
                         <h3>4+</h3>
-                        <p>Projects Completed</p>
+                        <p>Projects</p>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat">
                         <h3>7.75</h3>
                         <p>CGPA</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>87%</h3>
-                        <p>Class 12 Score</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3>89%</h3>
-                        <p>Class 10 Score</p>
+                    <div class="stat">
+                        <h3>2023</h3>
+                        <p>Started BTech</p>
                     </div>
                 </div>
             </div>
@@ -85,42 +85,49 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-header">
+                <h2>Skills</h2>
+                <div class="underline"></div>
+            </div>
+
             <div class="skills-grid">
-                <div class="skill-category">
+                <div class="skill-group">
                     <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
+                    <div class="skill-items">
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">SQL</span>
                     </div>
                 </div>
-                <div class="skill-category">
+
+                <div class="skill-group">
                     <h3>Frontend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">ReactJS</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">Tailwind CSS</span>
+                    <div class="skill-items">
+                        <span class="skill-item">ReactJS</span>
+                        <span class="skill-item">HTML5 & CSS3</span>
+                        <span class="skill-item">Tailwind CSS</span>
+                        <span class="skill-item">Responsive Design</span>
                     </div>
                 </div>
-                <div class="skill-category">
+
+                <div class="skill-group">
                     <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">JDBC</span>
-                        <span class="skill-tag">REST APIs</span>
+                    <div class="skill-items">
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">REST APIs</span>
+                        <span class="skill-item">JDBC</span>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Databases & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">VS Code</span>
+
+                <div class="skill-group">
+                    <h3>Tools & Databases</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Firebase</span>
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">VS Code</span>
                     </div>
                 </div>
             </div>
@@ -130,55 +137,71 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="underline"></div>
+            </div>
+
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">AI Road Extraction</div>
-                    <h3>AI Road Extraction Project</h3>
-                    <p class="project-tech">Python • AI/ML • Image Processing</p>
-                    <p>AI-assisted road extraction concept focused on identifying road structures from imagery. Explored image processing and segmentation concepts for mapping-related workflows.</p>
-                    <div class="project-features">
-                        <span>✓ Image Processing</span>
-                        <span>✓ ML Concepts</span>
-                        <span>✓ Visual Analysis</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>AI Road Extraction</h3>
+                        <span class="project-badge">Python • AI/ML</span>
                     </div>
-                </div>
+                    <p class="project-description">
+                        AI-assisted road extraction concept focused on identifying road structures from imagery using image processing and segmentation techniques.
+                    </p>
+                    <div class="project-tech">
+                        <span>Image Processing</span>
+                        <span>ML Concepts</span>
+                        <span>Python</span>
+                    </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">MessengerX Chat App</div>
-                    <h3>Real-Time Chat Web Application</h3>
-                    <p class="project-tech">ReactJS • Firebase • Tailwind CSS</p>
-                    <p>Modern chat web application with responsive UI and real-time messaging functionality. Implemented authentication workflows and user-based messaging using Firebase.</p>
-                    <div class="project-features">
-                        <span>✓ Real-Time Chat</span>
-                        <span>✓ Authentication</span>
-                        <span>✓ Responsive UI</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>MessengerX - Chat App</h3>
+                        <span class="project-badge">ReactJS • Firebase</span>
                     </div>
-                </div>
+                    <p class="project-description">
+                        Real-time chat application with responsive UI, user authentication, and Firebase integration for seamless messaging experience.
+                    </p>
+                    <div class="project-tech">
+                        <span>ReactJS</span>
+                        <span>Firebase</span>
+                        <span>Real-time Chat</span>
+                    </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">Emergency Alert System</div>
-                    <h3>Real-Time Alert Broadcasting Platform</h3>
-                    <p class="project-tech">Node.js • Firebase • REST APIs</p>
-                    <p>Real-time emergency reporting platform for broadcasting alerts to connected users. Implemented separate admin and user workflows with structured reporting system.</p>
-                    <div class="project-features">
-                        <span>✓ Real-Time Alerts</span>
-                        <span>✓ Admin Panel</span>
-                        <span>✓ REST APIs</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>Emergency Alert System</h3>
+                        <span class="project-badge">Node.js • REST APIs</span>
                     </div>
-                </div>
+                    <p class="project-description">
+                        Real-time emergency reporting platform with admin panel and structured reporting system for broadcasting alerts to users.
+                    </p>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>REST APIs</span>
+                        <span>Firebase</span>
+                    </div>
+                </article>
 
-                <div class="project-card">
-                    <div class="project-header">Virtual Try-On Website</div>
-                    <h3>Interactive Virtual Clothing Try-On</h3>
-                    <p class="project-tech">ReactJS • Camera APIs • Modern UI</p>
-                    <p>Concept-based virtual clothing try-on interface using interactive UI components. Explored camera integration ideas and responsive frontend development workflows.</p>
-                    <div class="project-features">
-                        <span>✓ Camera Integration</span>
-                        <span>✓ Interactive UI</span>
-                        <span>✓ Immersive UX</span>
+                <article class="project-card">
+                    <div class="project-header">
+                        <h3>Virtual Try-On Website</h3>
+                        <span class="project-badge">ReactJS • Camera API</span>
                     </div>
-                </div>
+                    <p class="project-description">
+                        Interactive virtual clothing try-on interface exploring camera integration and modern UI principles for immersive user experience.
+                    </p>
+                    <div class="project-tech">
+                        <span>ReactJS</span>
+                        <span>Camera APIs</span>
+                        <span>Interactive UI</span>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -186,47 +209,30 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <div class="education-header">
-                    <h3>GITAM University, Bengaluru</h3>
-                    <span class="education-date">2023 - 2027</span>
-                </div>
-                <p class="education-degree">Bachelor of Technology in Computer Science Engineering</p>
-                <div class="education-details">
-                    <div class="detail-item">
-                        <span class="label">CGPA:</span>
-                        <span class="value">7.75</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="label">Class 12:</span>
-                        <span class="value">87%</span>
-                    </div>
-                    <div class="detail-item">
-                        <span class="label">Class 10:</span>
-                        <span class="value">89%</span>
-                    </div>
-                </div>
+            <div class="section-header">
+                <h2>Education</h2>
+                <div class="underline"></div>
             </div>
-        </div>
-    </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
-        <div class="container">
-            <h2 class="section-title">Achievements</h2>
-            <div class="achievements-list">
-                <div class="achievement-item">
-                    <span class="achievement-icon">🏆</span>
-                    <p>Built and explored multiple independent web development projects focused on practical real-world workflows</p>
+            <div class="education-card">
+                <div class="edu-header">
+                    <h3>GITAM University, Bengaluru</h3>
+                    <span class="edu-period">2023 - 2027</span>
                 </div>
-                <div class="achievement-item">
-                    <span class="achievement-icon">💻</span>
-                    <p>Solved Data Structures and Algorithms problems across coding platforms including LeetCode and HackerRank</p>
-                </div>
-                <div class="achievement-item">
-                    <span class="achievement-icon">🚀</span>
-                    <p>Continuously learning modern frontend technologies, backend development, and scalable web application concepts</p>
+                <p class="edu-degree">B.Tech in Computer Science Engineering</p>
+                <div class="edu-details">
+                    <div class="edu-item">
+                        <span>CGPA</span>
+                        <strong>7.75</strong>
+                    </div>
+                    <div class="edu-item">
+                        <span>Class 12</span>
+                        <strong>87%</strong>
+                    </div>
+                    <div class="edu-item">
+                        <span>Class 10</span>
+                        <strong>89%</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -235,30 +241,34 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <div class="underline"></div>
+            </div>
+
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Let's Connect</h3>
-                    <p>I'm always interested in hearing about new projects and opportunities.</p>
+                    <p>I'm interested in new opportunities and collaborations.</p>
                     
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="label">📍 Location:</span>
-                            <p>Bengaluru, India</p>
-                        </div>
-                        <div class="contact-item">
-                            <span class="label">📧 Email:</span>
-                            <p><a href="mailto:koushikreddyka00@gmail.com">koushikreddyka00@gmail.com</a></p>
-                        </div>
-                        <div class="contact-item">
-                            <span class="label">📱 Phone:</span>
-                            <p><a href="tel:+917022950884">+91-7022950884</a></p>
+                    <div class="contact-list">
+                        <a href="mailto:koushikreddyka00@gmail.com" class="contact-link">
+                            <span class="contact-icon">✉</span>
+                            <span>koushikreddyka00@gmail.com</span>
+                        </a>
+                        <a href="tel:+917022950884" class="contact-link">
+                            <span class="contact-icon">📱</span>
+                            <span>+91-7022950884</span>
+                        </a>
+                        <div class="contact-link">
+                            <span class="contact-icon">📍</span>
+                            <span>Bengaluru, India</span>
                         </div>
                     </div>
 
-                    <div class="social-links-footer">
-                        <a href="https://github.com/koushikreddyka" target="_blank" class="social-btn">GitHub</a>
-                        <a href="https://linkedin.com/in/koushik-reddy" target="_blank" class="social-btn">LinkedIn</a>
+                    <div class="social-links">
+                        <a href="https://github.com/koushikreddyka" target="_blank" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/koushik-reddy" target="_blank" class="social-link">LinkedIn</a>
                     </div>
                 </div>
 
@@ -282,7 +292,6 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Koushik Reddy. All rights reserved.</p>
-            <p>Designed & Built with <span class="heart">❤️</span> using HTML, CSS & JavaScript</p>
         </div>
     </footer>
 
