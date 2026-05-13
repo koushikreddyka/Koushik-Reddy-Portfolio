@@ -1,387 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koushik Reddy | Software Developer</title>
+    
+    <!-- Fonts: Inter for clean, modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ocean: {
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            800: '#075985',
+                            900: '#082f49',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-  <meta charset="UTF-8" />
+    <style>
+        body {
+            background-color: #f0f9ff;
+            color: #0f172a;
+        }
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+        /* Premium Glassmorphism Panel (iOS/VisionOS Style) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.25); /* Increased transparency */
+            backdrop-filter: blur(32px); /* Increased blur for readability */
+            -webkit-backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 40px -10px rgba(8, 47, 73, 0.1), 
+                        inset 0 1px 0 rgba(255,255,255,0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-  <title>
-    Koushik Reddy | Premium Portfolio
-  </title>
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.35); /* Increased transparency */
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 50px -15px rgba(8, 47, 73, 0.15), 
+                        inset 0 1px 0 rgba(255,255,255,0.6);
+        }
 
-  <!-- Google Fonts -->
+        /* Top-Down Midday Ocean Background (Strictly No Mountains) */
+        .ocean-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -4;
+            /* Aerial view of crystal clear water with a tiny island/trees */
+            background-image: url('ocean.jpg
+              '); 
+            background-size: cover;
+            background-position: center;
+            animation: gentleWavePan 90s ease-in-out infinite alternate;
+            filter: contrast(1.1) brightness(1.05) saturate(1.2);
+        }
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
+        @keyframes gentleWavePan {
+            0% { transform: scale(1.15) translate(0%, 0%); }
+            100% { transform: scale(1.15) translate(-3%, 3%); }
+        }
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+        /* Realistic Deep Water Animal Shadows */
+        .marine-layer {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -3;
+            pointer-events: none;
+        }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+        /* We use heavy blur and multiply blend mode to make them look like real deep-water shadows */
+        .marine-shadow {
+            position: absolute;
+            fill: #082f49; /* Deep ocean navy */
+            mix-blend-mode: multiply;
+            opacity: 0.25;
+            filter: blur(14px); 
+            transition: transform 0.1s linear;
+        }
 
-  <!-- CSS -->
+        #turtle-shadow {
+            width: 350px;
+            top: 20%;
+            left: -10%;
+        }
 
-  <link rel="stylesheet" href="style.css" />
+        #manta-shadow {
+            width: 600px;
+            bottom: 5%;
+            right: -10%;
+        }
 
+        /* Clean scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(8, 47, 73, 0.2); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(8, 47, 73, 0.4); }
+    </style>
 </head>
+<body class="antialiased relative font-sans leading-relaxed">
 
-<body>
-
-  <!-- PARTICLES -->
-
-  <div id="particles"></div>
-
-  <!-- NAVBAR -->
-
-  <nav class="navbar">
-
-    <div class="logo">
-      KOUSHIK REDDY
+    <!-- Environmental Layers -->
+    <div class="ocean-bg"></div>
+    
+    <!-- Deep Water Shadows (Parallax via JS) -->
+    <div class="marine-layer overflow-hidden">
+        <!-- SVG Turtle Silhouette -->
+        <svg id="turtle-shadow" class="marine-shadow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,20 C55,20 60,25 60,35 C70,30 80,35 85,45 C85,50 80,55 75,55 C78,65 75,75 70,80 C60,85 40,85 30,80 C25,75 22,65 25,55 C20,55 15,50 15,45 C20,35 30,30 40,35 C40,25 45,20 50,20 Z" />
+        </svg>
+        
+        <!-- SVG Manta Silhouette -->
+        <svg id="manta-shadow" class="marine-shadow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50,30 C60,40 85,45 95,50 C95,52 85,55 70,55 C65,65 60,80 50,90 C40,80 35,65 30,55 C15,55 5,52 5,50 C15,45 40,40 50,30 Z" />
+            <path d="M45,32 C45,25 40,20 35,20 C40,25 45,30 45,32 Z" />
+            <path d="M55,32 C55,25 60,20 65,20 C60,25 55,30 55,32 Z" />
+        </svg>
     </div>
 
-    <div class="nav-links">
-
-      <a href="#about">About</a>
-
-      <a href="#projects">Projects</a>
-
-      <a href="#education">Education</a>
-
-      <a href="#contact">Contact</a>
-
-    </div>
-
-  </nav>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="container hero-grid">
-
-      <div class="hero-left">
-
-        <div class="hero-tag">
-
-          <span></span>
-
-          Calm Engineering • Premium Frontend Craftsmanship
-
-        </div>
-
-        <h1>
-          Koushik <span>Reddy</span>
-        </h1>
-
-        <p>
-
-          Final-year Computer Science engineering student passionate
-          about full-stack web development and scalable digital
-          experiences using ReactJS, Firebase, Node.js, and elegant UI systems.
-
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="#projects" class="btn btn-primary">
-            Explore Projects
-          </a>
-
-          <a href="#contact" class="btn btn-secondary">
-            Contact Me
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="hero-right">
-
-        <div class="image-wrapper">
-
-          <img
-            src="assets/profile.jpg"
-            alt="Koushik Reddy"
-          />
-
-        </div>
-
-        <div class="floating-card">
-
-          <h3>
-            Engineering Philosophy
-          </h3>
-
-          <p>
-
-            Building immersive interfaces with calm visual depth,
-            scalable architecture, and thoughtful UX systems.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Technical Foundation
-        </h2>
-
-        <p>
-
-          Focused on scalable frontend systems,
-          immersive user experiences,
-          and modern backend workflows.
-
-        </p>
-
-      </div>
-
-      <div class="about-grid">
-
-        <div class="glass-card">
-
-          <h3>
-            Technical Skills
-          </h3>
-
-          <div class="skills">
-
-            <div class="skill">JavaScript</div>
-            <div class="skill">ReactJS</div>
-            <div class="skill">Node.js</div>
-            <div class="skill">Firebase</div>
-            <div class="skill">Tailwind CSS</div>
-            <div class="skill">Spring Boot</div>
-            <div class="skill">MySQL</div>
-            <div class="skill">GitHub</div>
-
-          </div>
-
-        </div>
-
-        <div class="glass-card">
-
-          <h3>
-            Professional Summary
-          </h3>
-
-          <p>
-
-            Passionate about creating responsive applications,
-            backend systems, authentication workflows,
-            and immersive UI experiences.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- PROJECTS -->
-
-  <section id="projects">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Selected Projects
-        </h2>
-
-        <p>
-
-          Carefully crafted systems focused on usability,
-          immersive interaction, and scalable architecture.
-
-        </p>
-
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- PROJECT -->
-
-        <div class="project-card">
-
-          <div class="project-number">
-            01
-          </div>
-
-          <h3>
-            MessengerX
-          </h3>
-
-          <p>
-
-            Real-time modern chat application featuring
-            responsive UI, authentication workflows,
-            and cloud-based messaging.
-
-          </p>
-
-          <div class="tech-stack">
-
-            <div class="tech">
-              ReactJS
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 pt-6 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="glass-panel rounded-full px-6 py-4 flex justify-between items-center">
+                <div class="text-slate-800 font-bold text-lg tracking-tight">Koushik Reddy</div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#about" class="hover:text-ocean-800 transition-colors">Philosophy</a>
+                    <a href="#skills" class="hover:text-ocean-800 transition-colors">Expertise</a>
+                    <a href="#projects" class="hover:text-ocean-800 transition-colors">Craft</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com" target="_blank" class="p-2 text-slate-600 hover:text-ocean-800 hover:bg-white/50 rounded-full transition-all">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="p-2 text-slate-600 hover:text-ocean-800 hover:bg-white/50 rounded-full transition-all">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+    </nav>
 
-            <div class="tech">
-              Firebase
-            </div>
+    <!-- Main Content -->
+    <main class="relative z-10 pt-40 pb-24 px-6">
+        <div class="max-w-5xl mx-auto space-y-12">
 
-            <div class="tech">
-              Tailwind CSS
-            </div>
+            <!-- Hero Section -->
+            <section class="min-h-[70vh] flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="flex-1 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 glass-panel rounded-full">
+                        <span class="w-2 h-2 rounded-full bg-ocean-500 animate-pulse"></span>
+                        <span class="text-xs font-bold tracking-wider text-ocean-900 uppercase">Available for work</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight drop-shadow-sm">
+                        Designing modern digital experiences with calm aesthetics and practical engineering.
+                    </h1>
+                    <p class="text-lg text-slate-800 font-medium leading-relaxed max-w-xl">
+                        Final year Computer Science student exploring full-stack development, interactive UI design, and modern web technologies through hands-on projects and experimentation.
+                    </p>
+                    <div class="pt-4 flex items-center space-x-6 text-sm font-bold text-slate-800">
+                        <span class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-ocean-700"></i>Bengaluru, India</span>
+                        <span class="flex items-center"><i data-lucide="mail" class="w-4 h-4 mr-2 text-ocean-700"></i>koushikreddyka00@gmail.com</span>
+                    </div>
+                </div>
+                
+                <!-- Profile Image container -->
+                <div class="w-64 h-80 md:w-80 md:h-[400px] shrink-0 relative group">
+                    <div class="absolute inset-0 bg-ocean-100 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-6"></div>
+                    <div class="glass-panel absolute inset-0 rounded-3xl p-3 transform transition-transform group-hover:-translate-y-2">
+                        <img src="profile.jpg" alt="Koushik Reddy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </section>
 
-          </div>
+            <!-- Philosophy / About Section -->
+            <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12">
+                <div class="md:col-span-4">
+                    <h2 class="text-sm font-extrabold tracking-widest text-ocean-900 uppercase mb-4 drop-shadow-sm">Philosophy</h2>
+                </div>
+                <div class="md:col-span-8 glass-panel rounded-3xl p-8 md:p-10 text-slate-800 font-medium space-y-6 text-lg">
+                    <p class="leading-relaxed">
+                        I’m a final year Computer Science engineering student who enjoys building modern web experiences that feel smooth, responsive, and visually thoughtful.
+                    </p>
+                    <p class="leading-relaxed">
+                        My interest in development started with curiosity around how applications actually work behind the scenes, which slowly turned into experimenting with frontend interfaces, backend systems, APIs, authentication flows, and real-time applications.
+                    </p>
+                    <p class="leading-relaxed">
+                        I enjoy blending clean design with practical functionality — creating projects that are not only usable, but also visually immersive and engaging. Recently, I’ve been exploring full-stack development, interactive UI experiences, and AI-related concepts while continuously improving my understanding of scalable application workflows.
+                    </p>
+                    <p class="font-bold text-slate-900 border-l-4 border-ocean-600 pl-5 mt-8 italic">
+                        "I enjoy creating software that balances aesthetics and functionality — products that not only work well, but also feel intuitive and immersive to use."
+                    </p>
+                </div>
+            </section>
+
+            <!-- Expertise / Skills -->
+            <section id="skills" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12">
+                <div class="md:col-span-4">
+                    <h2 class="text-sm font-bold tracking-widest text-ocean-800 uppercase mb-4">Technical Expertise</h2>
+                </div>
+                <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-panel rounded-3xl p-6">
+                        <i data-lucide="code-2" class="w-8 h-8 text-ocean-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Languages</h3>
+                        <p class="text-slate-600">JavaScript, Java, Basic Python, SQL</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6">
+                        <i data-lucide="layout" class="w-8 h-8 text-ocean-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Frontend</h3>
+                        <p class="text-slate-600">ReactJS, HTML5, CSS3, Tailwind CSS</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6">
+                        <i data-lucide="server" class="w-8 h-8 text-ocean-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Backend & Databases</h3>
+                        <p class="text-slate-600">Node.js, Spring Boot, JDBC, Firebase Firestore, MySQL</p>
+                    </div>
+                    <div class="glass-panel rounded-3xl p-6">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-ocean-600 mb-4"></i>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Core Focus</h3>
+                        <p class="text-slate-600">Full Stack Workflow, Responsive UI, Authentication, Problem Solving</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Craft / Projects -->
+            <section id="projects" class="py-12">
+                <div class="mb-12">
+                    <h2 class="text-sm font-extrabold tracking-widest text-ocean-900 uppercase drop-shadow-sm">Featured Craft</h2>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- Project 1 -->
+                    <div class="glass-panel rounded-3xl p-8 md:p-10 group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">MessengerX</h3>
+                                <p class="text-ocean-800 font-semibold mt-1">Real-Time Chat Web Application</p>
+                            </div>
+                            <div class="flex gap-2 mt-4 md:mt-0 text-xs font-bold text-slate-600">
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">ReactJS</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Firebase</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Tailwind</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-800 font-medium leading-relaxed mb-6">
+                            A real-time messaging project built to explore how modern communication platforms work behind the scenes. The focus was creating a clean and responsive chatting experience while experimenting with authentication systems, real-time updates, and smooth frontend interactions. The project helped me understand application flow, state handling, and how interactive web experiences can feel fast and natural for users.
+                        </p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="glass-panel rounded-3xl p-8 md:p-10 group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Emergency Alert System</h3>
+                                <p class="text-ocean-800 font-semibold mt-1">Real-Time Notification Platform</p>
+                            </div>
+                            <div class="flex gap-2 mt-4 md:mt-0 text-xs font-bold text-slate-600">
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Node.js</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Firebase</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">REST APIs</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-800 font-medium leading-relaxed mb-6">
+                            An emergency reporting platform concept designed around real-world alert workflows. The idea was to create a system where users could quickly broadcast emergency situations while maintaining structured reporting and separate access levels for admins and users. This project helped me explore backend logic, authentication workflows, API handling, and practical problem-solving through software.
+                        </p>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="glass-panel rounded-3xl p-8 md:p-10 group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">AI Road Extraction Project</h3>
+                                <p class="text-ocean-800 font-semibold mt-1">Computer Vision Concept</p>
+                            </div>
+                            <div class="flex gap-2 mt-4 md:mt-0 text-xs font-bold text-slate-600">
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Python</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">AI/ML</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-800 font-medium leading-relaxed mb-6">
+                            An experimental project exploring AI-assisted road detection and mapping concepts using image analysis techniques. The goal was understanding how computer vision workflows can identify and process road structures from visual inputs. Working on this project introduced me to image preprocessing concepts, segmentation ideas, and the broader possibilities of AI in real-world applications.
+                        </p>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="glass-panel rounded-3xl p-8 md:p-10 group">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight">Virtual Try-On</h3>
+                                <p class="text-ocean-800 font-semibold mt-1">Interactive UI Experience</p>
+                            </div>
+                            <div class="flex gap-2 mt-4 md:mt-0 text-xs font-bold text-slate-600">
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">ReactJS</span>
+                                <span class="bg-white/40 px-3 py-1 rounded-full border border-white/50 backdrop-blur-md shadow-sm">Camera APIs</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-800 font-medium leading-relaxed mb-6">
+                            Built a concept-based virtual clothing try-on interface using interactive UI components. Explored camera integration ideas and responsive frontend development workflows, deeply focusing on immersive user experiences and modern UI design principles.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Education & Interests -->
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-8 py-12 border-t border-white/40">
+                <div class="space-y-6">
+                    <h2 class="text-sm font-bold tracking-widest text-ocean-800 uppercase">Education</h2>
+                    <div class="glass-panel rounded-3xl p-8">
+                        <h3 class="text-lg font-bold text-slate-900">GITAM University, Bengaluru</h3>
+                        <p class="text-slate-600 mb-4">B.Tech in Computer Science Engineering (2023 - 2027)</p>
+                        <div class="space-y-2 text-sm text-slate-700">
+                            <p>Current CGPA: 7.75</p>
+                            <p>Class 12: 87%</p>
+                            <p>Class 10: 89%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-sm font-bold tracking-widest text-ocean-800 uppercase">Current Interests</h2>
+                    <div class="glass-panel rounded-3xl p-8 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">UI/UX aesthetics</span>
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">Cinematic interfaces</span>
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">Modern product design</span>
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">Real-time systems</span>
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">AI experimentation</span>
+                        <span class="px-4 py-2 bg-white/40 border border-white/60 rounded-full text-sm text-slate-700">Storytelling through design</span>
+                    </div>
+                </div>
+            </section>
 
         </div>
+    </main>
 
-        <!-- PROJECT -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-        <div class="project-card">
+        // Deep Water Parallax for realistic animal shadows
+        const turtle = document.getElementById('turtle-shadow');
+        const manta = document.getElementById('manta-shadow');
 
-          <div class="project-number">
-            02
-          </div>
-
-          <h3>
-            Emergency Alert System
-          </h3>
-
-          <p>
-
-            Real-time emergency reporting platform with
-            backend APIs, notifications, and scalable architecture.
-
-          </p>
-
-          <div class="tech-stack">
-
-            <div class="tech">
-              Node.js
-            </div>
-
-            <div class="tech">
-              Firebase
-            </div>
-
-            <div class="tech">
-              REST APIs
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- EDUCATION -->
-
-  <section id="education">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Education
-        </h2>
-
-      </div>
-
-      <div class="education-card">
-
-        <h3>
-          GITAM University, Bengaluru
-        </h3>
-
-        <p>
-
-          Bachelor of Technology in Computer Science Engineering
-
-          <br /><br />
-
-          CGPA: 7.75
-
-          <br />
-
-          2023 — 2027
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer id="contact">
-
-    <div class="container">
-
-      <div class="footer-line"></div>
-
-      <h2>
-        Let’s Build Something Meaningful
-      </h2>
-
-      <p>
-        Bengaluru, India
-      </p>
-
-      <p>
-        +91-7022950884
-      </p>
-
-      <p>
-        koushikreddyka00@gmail.com
-      </p>
-
-    </div>
-
-  </footer>
-
-  <!-- JS -->
-
-  <script src="script.js"></script>
-
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            // Move slowly based on scroll to simulate massive size deep underwater
+            if(turtle) {
+                // Turtle swims diagonally down-right
+                turtle.style.transform = `translate(${scrollY * 0.15}px, ${scrollY * 0.08}px) rotate(15deg)`;
+            }
+            if(manta) {
+                // Manta swims diagonally up-left
+                manta.style.transform = `translate(${scrollY * -0.2}px, ${scrollY * -0.1}px) rotate(-30deg)`;
+            }
+        });
+    </script>
 </body>
 </html>
