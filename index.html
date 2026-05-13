@@ -47,12 +47,74 @@
 
         /* Premium Dark Glassmorphism */
          .glass-panel {
-            background: rgba(255, 255, 255, 0.25); /* Increased transparency */
-            backdrop-filter: blur(32px); /* Increased blur for readability */
-            -webkit-backdrop-filter: blur(32px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 10px 40px -10px rgba(8, 47, 73, 0.1), 
-…        }
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.14),
+        rgba(255, 255, 255, 0.05)
+    );
+
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 10px 40px -12px rgba(8, 47, 73, 0.22),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+
+    border-radius: 28px;
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease,
+        background 0.45s ease;
+
+    will-change: transform;
+}
+
+/* subtle reflective light */
+.glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.16) 0%,
+        rgba(255,255,255,0.04) 35%,
+        transparent 60%
+    );
+
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* premium hover effect */
+.glass-panel:hover {
+    transform: translateY(-8px) scale(1.015);
+
+    background: linear-gradient(
+        to bottom right,
+        rgba(255,255,255,0.18),
+        rgba(255,255,255,0.07)
+    );
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow:
+        0 20px 60px -15px rgba(15, 23, 42, 0.45),
+        0 0 30px rgba(148, 163, 184, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+}
+
+/* smoother click interaction */
+.glass-panel:active {
+    transform: scale(0.99);
+}
         /* Dark Background Setup with subtle panning */
         .main-bg {
             position: fixed;
