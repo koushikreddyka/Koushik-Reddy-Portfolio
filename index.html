@@ -46,74 +46,69 @@
         }
 
         /* Premium Dark Glassmorphism */
-         .glass-panel {
-    position: relative;
-    overflow: hidden;
+        .glass-panel {
+            position: relative;
+            overflow: hidden;
 
-    background: linear-gradient(
-        to bottom right,
-        rgba(255, 255, 255, 0.14),
-        rgba(255, 255, 255, 0.05)
-    );
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.14),
+                rgba(255, 255, 255, 0.05)
+            );
 
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.12);
 
-    box-shadow:
-        0 10px 40px -12px rgba(8, 47, 73, 0.22),
-        inset 0 1px 0 rgba(255,255,255,0.08);
+            box-shadow:
+                0 10px 40px -12px rgba(8, 47, 73, 0.22),
+                inset 0 1px 0 rgba(255,255,255,0.08);
 
-    border-radius: 28px;
+            border-radius: 28px;
 
-    transition:
-        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.45s ease,
-        border-color 0.45s ease,
-        background 0.45s ease;
+            transition:
+                transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.45s ease,
+                border-color 0.45s ease,
+                background 0.45s ease;
 
-    will-change: transform;
-}
+            will-change: transform;
+        }
 
-/* subtle reflective light */
-.glass-panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+        /* subtle reflective light */
+        .glass-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
 
-    background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0.16) 0%,
-        rgba(255,255,255,0.04) 35%,
-        transparent 60%
-    );
+            background: linear-gradient(
+                120deg,
+                rgba(255,255,255,0.16) 0%,
+                rgba(255,255,255,0.04) 35%,
+                transparent 60%
+            );
 
-    opacity: 0.7;
-    pointer-events: none;
-}
+            opacity: 0.7;
+            pointer-events: none;
+        }
 
-/* premium hover effect */
-.glass-panel:hover {
-            background: rgba(255, 255, 255, 0.35); /* Increased transparency */
-            border-color: rgba(255, 255, 255, 0.6);
+        /* premium hover effect */
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.08); /* More transparent on hover */
+            border: 1px solid rgba(255,255,255,0.18);
             transform: translateY(-2px);
-            box-shadow: 0 20px 50px -15px rgba(8, 47, 73, 0.15), 
-                        inset 0 1px 0 rgba(255,255,255,0.6);
-    );
+            box-shadow:
+                0 20px 60px -15px rgba(15, 23, 42, 0.45),
+                0 0 30px rgba(148, 163, 184, 0.08),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+        }
 
-    border: 1px solid rgba(255,255,255,0.18);
+        /* smoother click interaction */
+        .glass-panel:active {
+            transform: scale(0.99);
+        }
 
-    box-shadow:
-        0 20px 60px -15px rgba(15, 23, 42, 0.45),
-        0 0 30px rgba(148, 163, 184, 0.08),
-        inset 0 1px 0 rgba(255,255,255,0.12);
-}
-
-/* smoother click interaction */
-.glass-panel:active {
-    transform: scale(0.99);
-}
         /* Dark Background Setup with subtle panning */
         .main-bg {
             position: fixed;
@@ -141,6 +136,31 @@
             display: inline-block;
         }
 
+        /* Custom glowing social icons */
+        .social-icon-glow {
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover .social-icon-glow {
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 1)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+            transform: scale(1.15);
+        }
+        
+        .social-btn {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
         /* Clean scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -157,18 +177,19 @@
     <nav class="fixed w-full z-50 top-0 pt-6 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="glass-panel rounded-full px-6 py-4 flex justify-between items-center">
-                <div class="text-white font-bold text-lg tracking-tight">Koushik Reddy KA</div>
-                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <div class="text-white font-bold text-lg tracking-tight z-10">Koushik Reddy KA</div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300 z-10">
                     <a href="#skills" class="hover:text-white transition-colors">Expertise</a>
                     <a href="#projects" class="hover:text-white transition-colors">Craft</a>
                     <a href="#about" class="hover:text-white transition-colors">Philosophy</a>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex space-x-4 z-10">
+                    <!-- Raw SVG for guaranteed rendering in navbar -->
                     <a href="https://github.com/koushikreddyka" target="_blank" class="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all">
-                        <i data-lucide="github" class="w-5 h-5"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
                     <a href="https://www.linkedin.com/in/koushik-reddy-ka-67857728b/" target="_blank" class="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition-all">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
                 </div>
             </div>
@@ -180,22 +201,33 @@
         <div class="max-w-5xl mx-auto space-y-12">
 
             <!-- Hero Section -->
-            <section class="min-h-[70vh] flex flex-col md:flex-row items-center justify-between gap-12">
+             <section class="min-h-[50vh] flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex-1 space-y-6">
                     <div class="inline-flex items-center space-x-2 px-4 py-2 glass-panel rounded-full border border-white/20">
-                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_rgba(74,222,128,0.6)]"></span>
-                        <span class="text-xs font-bold tracking-wider text-slate-200 uppercase">Available for work</span>
+                        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_rgba(74,222,128,0.6)] z-10"></span>
+                        <span class="text-xs font-bold tracking-wider text-slate-200 uppercase z-10">Available for work</span>
                     </div>
                     <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight drop-shadow-lg">
-                        Designing modern <span class="glow-text">digital</span> experiences with calm aesthetics and practical engineering.
+                        Exploring the space between code and creativity with <span class="glow-text">curiosity</span>, thoughtful design, and an obsession for meaningful experiences.
                     </h1>
                     <p class="text-lg text-slate-300 font-medium leading-relaxed max-w-xl">
-                        Final year Computer Science student exploring full-stack development, interactive UI design, and modern web technologies through hands-on projects and experimentation.
-                    </p>
+                    Final year Computer Science student passionate about creating meaningful digital experiences through code, thoughtful design, and continuous exploration, always driven by curiosity and a desire to build things that people genuinely enjoy using.
                     <div class="pt-4 flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 text-sm font-bold text-slate-300">
                         <span class="flex items-center"><i data-lucide="map-pin" class="w-4 h-4 mr-2 text-slate-400"></i>Bengaluru, India</span>
-                        <a href="mailto:koushikreddyka00@gmail.com" class="flex items-center hover:text-white transition-colors">
+                        <a href="mailto:koushikreddyka00@gmail.com" class="flex items-center hover:text-white transition-colors hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
                             <i data-lucide="mail" class="w-4 h-4 mr-2 text-slate-400"></i>koushikreddyka00@gmail.com
+                        </a>
+                    </div>
+                    
+                    <!-- NEW GLOWING SOCIAL LINKS -->
+                    <div class="pt-6 flex items-center space-x-5 z-10 relative">
+                        <!-- GitHub Raw SVG Button -->
+                        <a href="https://github.com/koushikreddyka" target="_blank" rel="noopener noreferrer" class="social-btn flex items-center justify-center w-12 h-12 rounded-full">
+                            <svg class="w-5 h-5 social-icon-glow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <!-- LinkedIn Raw SVG Button -->
+                        <a href="https://www.linkedin.com/in/koushik-reddy-ka-67857728b/" target="_blank" rel="noopener noreferrer" class="social-btn flex items-center justify-center w-12 h-12 rounded-full">
+                            <svg class="w-5 h-5 social-icon-glow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                     </div>
                 </div>
@@ -204,7 +236,7 @@
                 <div class="w-64 h-80 md:w-80 md:h-[400px] shrink-0 relative group">
                     <div class="absolute inset-0 bg-white/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-6 border border-white/10"></div>
                     <div class="glass-panel absolute inset-0 rounded-3xl p-3 transform transition-transform group-hover:-translate-y-2">
-                        <img src="profile.jpg" alt="Koushik Reddy KA" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+                        <img src="profile.jpg" alt="Koushik Reddy KA" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 z-10 relative">
                     </div>
                 </div>
             </section>
@@ -216,24 +248,24 @@
                 </div>
                 <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="glass-panel rounded-3xl p-6">
-                        <i data-lucide="code-2" class="w-8 h-8 text-slate-300 mb-4"></i>
-                        <h3 class="text-lg font-bold text-white mb-2">Languages</h3>
-                        <p class="text-slate-400">JavaScript, Java, Basic Python, SQL</p>
+                        <i data-lucide="code-2" class="w-8 h-8 text-slate-300 mb-4 z-10 relative"></i>
+                        <h3 class="text-lg font-bold text-white mb-2 z-10 relative">Languages</h3>
+                        <p class="text-slate-400 z-10 relative">JavaScript, Java, Basic Python, SQL</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6">
-                        <i data-lucide="layout" class="w-8 h-8 text-slate-300 mb-4"></i>
-                        <h3 class="text-lg font-bold text-white mb-2">Frontend</h3>
-                        <p class="text-slate-400">ReactJS, HTML5, CSS3</p>
+                        <i data-lucide="layout" class="w-8 h-8 text-slate-300 mb-4 z-10 relative"></i>
+                        <h3 class="text-lg font-bold text-white mb-2 z-10 relative">Frontend</h3>
+                        <p class="text-slate-400 z-10 relative">ReactJS, HTML5, CSS3</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6">
-                        <i data-lucide="server" class="w-8 h-8 text-slate-300 mb-4"></i>
-                        <h3 class="text-lg font-bold text-white mb-2">Backend & Databases</h3>
-                        <p class="text-slate-400">Node.js, Spring Boot, JDBC, Firebase Firestore, MySQL</p>
+                        <i data-lucide="server" class="w-8 h-8 text-slate-300 mb-4 z-10 relative"></i>
+                        <h3 class="text-lg font-bold text-white mb-2 z-10 relative">Backend & Databases</h3>
+                        <p class="text-slate-400 z-10 relative">Node.js, Spring Boot, JDBC, Firebase Firestore, MySQL</p>
                     </div>
                     <div class="glass-panel rounded-3xl p-6">
-                        <i data-lucide="sparkles" class="w-8 h-8 text-slate-300 mb-4"></i>
-                        <h3 class="text-lg font-bold text-white mb-2">Core Focus</h3>
-                        <p class="text-slate-400">Full Stack Workflow, Responsive UI, Authentication, Problem Solving</p>
+                        <i data-lucide="sparkles" class="w-8 h-8 text-slate-300 mb-4 z-10 relative"></i>
+                        <h3 class="text-lg font-bold text-white mb-2 z-10 relative">Core Focus</h3>
+                        <p class="text-slate-400 z-10 relative">Full Stack Workflow, Responsive UI, Authentication, Problem Solving</p>
                     </div>
                 </div>
             </section>
@@ -247,7 +279,7 @@
                 <div class="space-y-8">
                     <!-- Project 1 -->
                     <div class="glass-panel rounded-3xl p-8 md:p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 z-10 relative">
                             <div>
                                 <h3 class="text-2xl font-extrabold text-white tracking-tight">MessengerX</h3>
                                 <p class="text-slate-400 font-semibold mt-1">Real-Time Chat Web Application</p>
@@ -258,14 +290,14 @@
                                 <span class="bg-white/10 px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">Tailwind</span>
                             </div>
                         </div>
-                        <p class="text-slate-300 font-medium leading-relaxed mb-6">
+                        <p class="text-slate-300 font-medium leading-relaxed mb-6 z-10 relative">
                             A real-time messaging project built to explore how modern communication platforms work behind the scenes. The focus was creating a clean and responsive chatting experience while experimenting with authentication systems, real-time updates, and smooth frontend interactions. The project helped me understand application flow, state handling, and how interactive web experiences can feel fast and natural for users.
                         </p>
                     </div>
 
                     <!-- Project 2 -->
                     <div class="glass-panel rounded-3xl p-8 md:p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 z-10 relative">
                             <div>
                                 <h3 class="text-2xl font-extrabold text-white tracking-tight">Emergency Alert System</h3>
                                 <p class="text-slate-400 font-semibold mt-1">Real-Time Notification Platform</p>
@@ -276,14 +308,14 @@
                                 <span class="bg-white/10 px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">REST APIs</span>
                             </div>
                         </div>
-                        <p class="text-slate-300 font-medium leading-relaxed mb-6">
+                        <p class="text-slate-300 font-medium leading-relaxed mb-6 z-10 relative">
                             An emergency reporting platform concept designed around real-world alert workflows. The idea was to create a system where users could quickly broadcast emergency situations while maintaining structured reporting and separate access levels for admins and users. This project helped me explore backend logic, authentication workflows, API handling, and practical problem-solving through software.
                         </p>
                     </div>
 
                     <!-- Project 3 -->
                     <div class="glass-panel rounded-3xl p-8 md:p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 z-10 relative">
                             <div>
                                 <h3 class="text-2xl font-extrabold text-white tracking-tight">AI Road Extraction Project</h3>
                                 <p class="text-slate-400 font-semibold mt-1">Computer Vision Concept</p>
@@ -293,14 +325,14 @@
                                 <span class="bg-white/10 px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">AI/ML</span>
                             </div>
                         </div>
-                        <p class="text-slate-300 font-medium leading-relaxed mb-6">
+                        <p class="text-slate-300 font-medium leading-relaxed mb-6 z-10 relative">
                             An experimental project exploring AI-assisted road detection and mapping concepts using image analysis techniques. The goal was understanding how computer vision workflows can identify and process road structures from visual inputs. Working on this project introduced me to image preprocessing concepts, segmentation ideas, and the broader possibilities of AI in real-world applications.
                         </p>
                     </div>
                     
                     <!-- Project 4 -->
                     <div class="glass-panel rounded-3xl p-8 md:p-10 group">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 z-10 relative">
                             <div>
                                 <h3 class="text-2xl font-extrabold text-white tracking-tight">Virtual Try-On</h3>
                                 <p class="text-slate-400 font-semibold mt-1">Interactive UI Experience</p>
@@ -310,7 +342,7 @@
                                 <span class="bg-white/10 px-3 py-1 rounded-full border border-white/20 backdrop-blur-md">Camera APIs</span>
                             </div>
                         </div>
-                        <p class="text-slate-300 font-medium leading-relaxed mb-6">
+                        <p class="text-slate-300 font-medium leading-relaxed mb-6 z-10 relative">
                             Built a concept-based virtual clothing try-on interface using interactive UI components. Explored camera integration ideas and responsive frontend development workflows, deeply focusing on immersive user experiences and modern UI design principles.
                         </p>
                     </div>
@@ -323,9 +355,9 @@
                 <div class="space-y-6">
                     <h2 class="text-sm font-bold tracking-widest text-slate-400 uppercase">Education</h2>
                     <div class="glass-panel rounded-3xl p-8">
-                        <h3 class="text-lg font-bold text-white">GITAM University, Bengaluru</h3>
-                        <p class="text-slate-400 mb-4">B.Tech in Computer Science Engineering (2023 - 2027)</p>
-                        <div class="space-y-2 text-sm text-slate-300">
+                        <h3 class="text-lg font-bold text-white z-10 relative">GITAM University, Bengaluru</h3>
+                        <p class="text-slate-400 mb-4 z-10 relative">B.Tech in Computer Science Engineering (2023 - 2027)</p>
+                        <div class="space-y-2 text-sm text-slate-300 z-10 relative">
                             <p>Current CGPA: 7.75</p>
                             <p>Class 12: 87%</p>
                             <p>Class 10: 89%</p>
@@ -336,34 +368,35 @@
                 <div class="space-y-6">
                     <h2 class="text-sm font-bold tracking-widest text-slate-400 uppercase">Current Interests</h2>
                     <div class="glass-panel rounded-3xl p-8 flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">UI/UX aesthetics</span>
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">Cinematic interfaces</span>
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">Modern product design</span>
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">Real-time systems</span>
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">AI experimentation</span>
-                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white">Storytelling through design</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">UI/UX aesthetics</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">Cinematic interfaces</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">Modern product design</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">Real-time systems</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">AI experimentation</span>
+                        <span class="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm text-white z-10 relative">Storytelling through design</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Philosophy / About Section (Moved to Bottom) -->
+            <!-- Philosophy / About Section -->
             <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start py-12 border-t border-white/10">
                 <div class="md:col-span-4">
                     <h2 class="text-sm font-extrabold tracking-widest text-slate-400 uppercase mb-4 drop-shadow-sm">Philosophy</h2>
                 </div>
                 <div class="md:col-span-8 glass-panel rounded-3xl p-8 md:p-10 text-slate-300 font-medium space-y-6 text-lg">
-                    <p class="leading-relaxed">
-                        I’m a final year Computer Science engineering student who enjoys building modern web experiences that feel smooth, responsive, and visually thoughtful.
-                    </p>
-                    <p class="leading-relaxed">
-                        My interest in development started with curiosity around how applications actually work behind the scenes, which slowly turned into experimenting with frontend interfaces, backend systems, APIs, authentication flows, and real-time applications.
-                    </p>
-                    <p class="leading-relaxed">
-                        I enjoy blending clean design with practical functionality — creating projects that are not only usable, but also visually immersive and engaging. Recently, I’ve been exploring full-stack development, interactive UI experiences, and AI-related concepts while continuously improving my understanding of scalable application workflows.
-                    </p>
-                    <p class="font-bold text-white border-l-4 border-slate-500 pl-5 mt-8 italic">
-                        "I enjoy creating software that balances aesthetics and functionality — products that not only work well, but also feel intuitive and immersive to use."
-                    </p>
+                    <p class="leading-relaxed z-10 relative">
+I’m a final year Computer Science engineering student who enjoys building digital experiences that sit somewhere between technology, design, and human interaction. I’ve always been fascinated by how simple ideas slowly become things people can actually see, touch, and interact with. For me, software has never felt like just lines of code on a screen — it feels more like creating experiences that people spend time with and remember.
+<<p class="leading-relaxed z-10 relative">
+                        It started with simple questions — “How does this work?” and “Can I build something like that?” Somewhere between curiosity, broken experiments, and late-night ideas, I found myself enjoying the process of creating things that people can see, use, and connect with.
+                        </p>
+                        
+                        <p class="leading-relaxed z-10 relative">
+                        Today, I enjoy exploring the space where technology meets creativity — building experiences that feel smooth, thoughtful, and a little more human than just lines of code.
+                        </p>
+                        
+                        <p class="font-bold text-white border-l-4 border-slate-500 pl-5 mt-8 italic z-10 relative">
+                        "Every project starts with curiosity. Everything after that is experimentation."
+                        </p>>
                 </div>
             </section>
 
@@ -372,7 +405,7 @@
 
     <!-- Copyright Footer -->
     <footer class="relative z-10 text-center py-8 text-slate-500 text-sm border-t border-white/5 mt-8">
-        <p>&copy; 2026 Koushik Reddy KA. All rights reserved.</p>
+        <p>&copy; 2026 Koushik Reddy KA. Crafted with curiosity and caffeine.</p>
     </footer>
 
     <script>
