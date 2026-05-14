@@ -266,6 +266,40 @@
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
         }
+       /* Glass cursor trail */
+
+#cursor-trail{
+    position: fixed;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 9999px;
+
+    pointer-events: none;
+    z-index: 9999;
+
+    transform: translate(-50%,-50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.12) 0%,
+        rgba(255,255,255,0.06) 35%,
+        transparent 75%
+    );
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    opacity: .8;
+
+    transition:
+        width .3s ease,
+        height .3s ease;
+}
+
 
         /* Clean scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -274,13 +308,43 @@
         ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
     </style>
 </head>
+<div id="cursor-trail"></div>
+<script>
+const trail = document.getElementById("cursor-trail");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove",(e)=>{
+    mouseX=e.clientX;
+    mouseY=e.clientY;
+});
+
+function animate(){
+
+    currentX += (mouseX-currentX)*0.08;
+    currentY += (mouseY-currentY)*0.08;
+
+    trail.style.left=currentX+"px";
+    trail.style.top=currentY+"px";
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+
 <body class="antialiased relative font-sans leading-relaxed selection:bg-white/20 selection:text-white">
 
     <!-- Environmental Layers -->
     <div class="main-bg"></div>
     
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 pt-6 px-6">
+    <nav class="absolute w-full z-50 top-0 pt-6 px-6">
         <div class="max-w-5xl mx-auto">
             <div class="glass-panel rounded-full px-6 py-4 flex justify-between items-center">
                 <div class="text-white font-bold text-lg tracking-tight z-10">Koushik Reddy KA</div>
