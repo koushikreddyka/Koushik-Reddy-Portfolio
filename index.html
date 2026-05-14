@@ -93,22 +93,128 @@
             pointer-events: none;
         }
 
-        /* premium hover effect */
-        .glass-panel:hover {
-            background: rgba(255, 255, 255, 0.08); /* More transparent on hover */
-            border: 1px solid rgba(255,255,255,0.18);
-            transform: translateY(-2px);
-            box-shadow:
-                0 20px 60px -15px rgba(15, 23, 42, 0.45),
-                0 0 30px rgba(148, 163, 184, 0.08),
-                inset 0 1px 0 rgba(255,255,255,0.12);
-        }
+        /* ========================= */
+/* Premium Frosted Glass UI */
+/* ========================= */
 
-        /* smoother click interaction */
-        .glass-panel:active {
-            transform: scale(0.99);
-        }
+.glass-panel {
+    position: relative;
+    overflow: hidden;
 
+    /* transparent white glass */
+    background: rgba(255,255,255,0.06);
+
+    /* glass blur */
+    backdrop-filter: blur(22px) saturate(180%);
+    -webkit-backdrop-filter: blur(22px) saturate(180%);
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    box-shadow:
+        0 8px 32px rgba(255,255,255,0.03),
+        0 20px 60px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.18);
+
+    transition:
+        transform .45s ease,
+        background .45s ease,
+        border .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* glass reflection layer */
+
+.glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.28) 0%,
+        rgba(255,255,255,0.08) 35%,
+        transparent 65%
+    );
+
+    opacity: .8;
+    pointer-events: none;
+}
+
+
+/* one-direction shine sweep */
+
+.glass-panel::after {
+    content: "";
+    position: absolute;
+
+    top: -150%;
+    left: -80%;
+
+    width: 35%;
+    height: 400%;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.12),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* hover card animation */
+
+.glass-panel:hover {
+
+    background: rgba(255,255,255,0.10);
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    transform:
+        translateY(-6px)
+        scale(1.015);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.35),
+        0 0 50px rgba(255,255,255,0.08),
+        inset 0 1px 1px rgba(255,255,255,0.25);
+}
+
+
+/* forward-only shine */
+
+.glass-panel:hover::after {
+    opacity: 1;
+    animation: glassSweep 1s ease forwards;
+}
+
+
+/* one-way movement */
+
+@keyframes glassSweep {
+
+    from {
+        left: -80%;
+    }
+
+    to {
+        left: 180%;
+    }
+}
+
+
+/* click feel */
+
+.glass-panel:active {
+    transform: scale(0.99);
+}
         /* Dark Background Setup with subtle panning */
         .main-bg {
             position: fixed;
@@ -236,8 +342,7 @@
                 <div class="w-64 h-80 md:w-80 md:h-[400px] shrink-0 relative group">
                     <div class="absolute inset-0 bg-white/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-6 border border-white/10"></div>
                     <div class="glass-panel absolute inset-0 rounded-3xl p-3 transform transition-transform group-hover:-translate-y-2">
-                        <img src="profile.jpg" alt="Koushik Reddy KA" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 z-10 relative">
-                    </div>
+                        <img src="profile.jpg" alt="Koushik Reddy KA" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" class="w-full h-full object-cover rounded-2xl grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700 z-10 relative">
                 </div>
             </section>
 
@@ -384,8 +489,7 @@
                     <h2 class="text-sm font-extrabold tracking-widest text-slate-400 uppercase mb-4 drop-shadow-sm">Philosophy</h2>
                 </div>
                 <div class="md:col-span-8 glass-panel rounded-3xl p-8 md:p-10 text-slate-300 font-medium space-y-6 text-lg">
-                    <p class="leading-relaxed z-10 relative">
-I’m a final year Computer Science engineering student who enjoys building digital experiences that sit somewhere between technology, design, and human interaction. I’ve always been fascinated by how simple ideas slowly become things people can actually see, touch, and interact with. For me, software has never felt like just lines of code on a screen — it feels more like creating experiences that people spend time with and remember.
+                    
 <<p class="leading-relaxed z-10 relative">
                         It started with simple questions — “How does this work?” and “Can I build something like that?” Somewhere between curiosity, broken experiments, and late-night ideas, I found myself enjoying the process of creating things that people can see, use, and connect with.
                         </p>
